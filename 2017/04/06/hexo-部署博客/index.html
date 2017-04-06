@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>hexo-部署博客 | k-blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+      <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/js/google-code-prettify/tomorrow-night-eighties.min.css">
+
+  </head>
+
+  <body>
+
+<header>
+	<a id="logo" href="/" title="k-blog">
+	<img src="/favicon.png" alt="k-blog"></a>
+	
+	
+		<!--搜索栏-->
+		<i class="js-toggle-search iconfont icon-search"></i>
+
+
+<form class="js-search search-form search-form--modal" method="get" action="http://gushi.li" role="search">
+	<div class="search-form__inner">
+		<div>
+			<i class="iconfont icon-search"></i>
+			<input class="text-input" placeholder="Enter Key..." type="search">
+		</div>
+	</div>
+</form>
+	
+
+	
+		<!--侧边导航栏-->
+		<a id="nav-toggle" href="#"><span></span></a>
+
+<nav>
+	<div class="menu-top-container">
+		<ul id="menu-top" class="menu">
+			
+				
+				<li class="current-menu-item">
+					<a href="https://kunphp.github.io/" target="">首页</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="http://weibo.com/5497648979/profile?topnav=1&amp;wvr=6&amp;is_all=1" target="">闲弄</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="http://weibo.com/5497648979/profile?topnav=1&amp;wvr=6&amp;is_all=1" target="">杂</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="http://weibo.com/5497648979/profile?topnav=1&amp;wvr=6&amp;is_all=1" target="">我</a>
+				</li>
+			
+		</ul>
+	</div>
+</nav>
+	
+
+</header>
+<div class="m-header ">
+	<section id="hero1" class="hero">
+		<div class="inner">
+		</div>
+	</section>
+	
+		<figure class="top-image" data-enable=true></figure>
+	
+</div>
+
+<!--文章列表-->
+<div class="wrapper">
+  
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      hexo-部署博客
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<h2 id="一、-准备工作"><a href="#一、-准备工作" class="headerlink" title="一、 准备工作"></a>一、 准备工作</h2><h4 id="在开始一切之前，你必须已经："><a href="#在开始一切之前，你必须已经：" class="headerlink" title="在开始一切之前，你必须已经："></a>在开始一切之前，你必须已经：</h4><ul>
+<li>有一个github账号，没有的话去注册一个；</li>
+<li><p>安装了node.js、npm</p>
+<p> Node.js是一个Javascript运行环境(runtime)。实际上它是对Google V8引擎进行了封装。V8引 擎执行Javascript的速度非常快，性能非常好。Node.js对一些特殊用例进行了优化，提供了替代的API，使得V8在非浏览器环境下运行得更好。</p>
+<p> 安装：</p>
+<blockquote>
+<p>去下载 <a href="https://nodejs.org/en/download/" target="_blank" rel="external">node.js</a>，下载好了之后一步二步就安装好了。<br>npm其实是Node.js的包管理工具（package manager）。其实npm已经在Node.js安装的时候顺带装好了。我们在命令提示符或者终端输入npm -v，应该看到类似的输出：</p>
+</blockquote>
+  <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ <span class="keyword">node</span> <span class="title">-v</span></div><div class="line">v6.<span class="number">10.1</span></div><div class="line"></div><div class="line">$ npm -v</div><div class="line"><span class="number">3.10</span>.<span class="number">10</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>说明已经安装完成了。</p>
+<ul>
+<li>安装了git for windows（或者其它git客户端）</li>
+</ul>
+<hr>
+<p>我的使用环境：</p>
+<ul>
+<li>Windows10</li>
+<li>node.js@6.10.2x64</li>
+<li>git@2.6.4</li>
+<li>hexo@3.3.1</li>
+</ul>
+<hr>
+<h2 id="二、使用hexo写博客"><a href="#二、使用hexo写博客" class="headerlink" title="二、使用hexo写博客"></a>二、使用hexo写博客</h2><blockquote>
+<p>Hexo是一个简单、快速、强大的基于 Github Pages 的博客发布工具，支持Markdown格式，有众多优秀插件和主题。</p>
+</blockquote>
+<h4 id="1、原理："><a href="#1、原理：" class="headerlink" title="1、原理："></a>1、原理：</h4><blockquote>
+<p>由于github pages存放的都是静态文件，博客存放的不只是文章内容，还有文章列表、分类、标签、翻页等动态内容，假如每次写完一篇文章都要手动更新博文目录和相关链接信息，相信谁都会疯掉，所以hexo所做的就是将这些md文件都放在本地，每次写完文章后调用写好的命令来批量完成相关页面的生成，然后再将有改动的页面提交到github。</p>
+<h4 id="2、注意事项："><a href="#2、注意事项：" class="headerlink" title="2、注意事项："></a>2、注意事项：</h4><p>a、很多命令既可以用Windows的cmd来完成，也可以使用git bash来完成，但是部分命令会有一些问题，为避免不必要的问题，建议全部使用git bash来执行；</p>
+<p>b、hexo不同版本差别比较大，网上很多文章的配置信息都是基于2.x的，所以注意不要被误导；</p>
+<p>c、hexo有2种_config.yml文件，一个是根目录下的全局的_config.yml，一个是各个theme下的；</p>
+</blockquote>
+<h4 id="3、安装"><a href="#3、安装" class="headerlink" title="3、安装"></a>3、安装</h4><figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$  npm <span class="keyword">install</span> -g hexo</div></pre></td></tr></table></figure>
+<h4 id="4、初始化"><a href="#4、初始化" class="headerlink" title="4、初始化"></a>4、初始化</h4><p>在电脑的某个地方新建一个名为hexo的文件夹（名字可以随便取），比如我的是d:\wamp64\www\hexo，由于这个文件夹将来就作为你存放代码的地方，所以最好不要随便放。</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd <span class="meta-keyword">/d/</span>wamp64<span class="meta-keyword">/www/</span>hexo/</div><div class="line">$ hexo init</div></pre></td></tr></table></figure>
+<p>hexo会自动下载一些文件到这个目录，包括node_modules，目录结构如下图：</p>
+<p><img src="http://onpn9b1bp.bkt.clouddn.com/J%29BIFV7XUE%7BV8RY%7BXCJT%7B$9.png" alt="image"></p>
+<h4 id="5、生成静态文件，启动本地服务查看"><a href="#5、生成静态文件，启动本地服务查看" class="headerlink" title="5、生成静态文件，启动本地服务查看"></a>5、生成静态文件，启动本地服务查看</h4><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>hexo g <span class="comment"># 生成</span></div><div class="line"><span class="variable">$ </span>hexo s <span class="comment"># 启动服务</span></div></pre></td></tr></table></figure>
+<p>执行以上命令之后，hexo就会在项目目录下面产生public文件夹并生成相关html文件，这些文件将来都是要提交到github去的：</p>
+<p>hexo s是开启本地预览服务，打开浏览器访问 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 即可看到内容。</p>
+<p>第一次初始化的时候hexo已经帮我们写了一篇名为 Hello World 的文章，默认的主题比较丑，打开时就是这个样子：<br><img src="http://onpn9b1bp.bkt.clouddn.com/CVP%7DSW%297B0~GM_85%7BE_F~RK.png" alt="image"></p>
+<hr>
+<ul>
+<li><p><strong>修改配置文件：</strong></p>
+<p>修改_config.yml中的theme: landscape改为theme: varaint<br>然后重新生成静态页面</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">hexo g</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如果出现一些莫名其妙的问题，可以先执行<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">hexo clean</span></div></pre></td></tr></table></figure></p>
+<p>来清理一下public的内容，然后再来重新生成和发布。</p>
+<p>总结：以上，一步一步执行下来之后发现个人的博客已经在本地生成了并且可以查看了，但是只能是自己看到，能不能让其他人查阅呢？</p>
+<hr>
+<h2 id="三、上传到github或者码云等托管控制器上面"><a href="#三、上传到github或者码云等托管控制器上面" class="headerlink" title="三、上传到github或者码云等托管控制器上面"></a>三、上传到github或者码云等托管控制器上面</h2><p>如果你一切都配置好了，发布上传很容易，一句hexo d就搞定，当然关键还是你要把所有东西配置好。</p>
+<h4 id="1、ssh-key肯定要配置好。"><a href="#1、ssh-key肯定要配置好。" class="headerlink" title="1、ssh key肯定要配置好。"></a>1、ssh key肯定要配置好。</h4><h4 id="2、其次，配置-config-yml中有关deploy的部分："><a href="#2、其次，配置-config-yml中有关deploy的部分：" class="headerlink" title="2、其次，配置_config.yml中有关deploy的部分："></a>2、其次，配置_config.yml中有关deploy的部分：</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">deploy</span>:</div><div class="line">  <span class="attribute">type</span>: git</div><div class="line">  <span class="attribute">repository</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:kunphp/kunphp.github.io.git</div><div class="line">  <span class="attribute">branch</span>: master</div></pre></td></tr></table></figure>
+<p>配置完成后，执行部署：</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">hexo d</span></div></pre></td></tr></table></figure>
+<p>会发现报如下错误：</p>
+<figure class="highlight subunit"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">ERROR </span>Deployer not found: git</div></pre></td></tr></table></figure>
+<p>原因是还需要安装一个插件：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></div></pre></td></tr></table></figure>
+<p>安装完插件后，再执行hexo d 将文件部署到github上<br>至此，任何人就可以通过<a href="https://kunphp.github.io/来访问我们部署的个人博客了。" target="_blank" rel="external">https://kunphp.github.io/来访问我们部署的个人博客了。</a></p>
+<p>当然，有同学会嫌弃自己的这个网址难记，砸门能不能配上自己的域名进行访问呢？可以滴！前提是有服务器和域名的土豪们。双手奉上配置：</p>
+<ul>
+<li><p>在项目根目录找到source文件，在source下创建一个CNAME文件(无扩展名)，填写下面内容：</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//你要绑定的域名</span></div><div class="line">wangyukun.online</div></pre></td></tr></table></figure>
+</li>
+<li><p>去你购买域名的服务商空间里找到域名解析的选项,修改如下:<br><img src="http://om733u7yz.bkt.clouddn.com/zzz.png" alt="image"></p>
+</li>
+<li>最后执行</li>
+</ul>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">$</span> hexo d <span class="comment">// 自动部署到远程仓库根目录下</span></div></pre></td></tr></table></figure>
+<p>总结：</p>
+<p>1、在GitHub创建仓库的时候要求，用户名.github.io格式。</p>
+<p>2、在部署文件上传远程仓库时，要安装npm install hexo-deployer-git –save这个插件。</p>
+<p>3、尽量在git bush上执行命令。</p>
+<h2 id="四、添加一篇文章"><a href="#四、添加一篇文章" class="headerlink" title="四、添加一篇文章"></a>四、添加一篇文章</h2><ul>
+<li>添加文章 hexo n 文章名 #</li>
+</ul>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo n hexo-部署博客</div><div class="line">INFO  Created: D:<span class="symbol">\w</span>amp64<span class="symbol">\w</span>ww<span class="symbol">\h</span>exo<span class="symbol">\s</span>ource<span class="symbol">\_</span>posts<span class="symbol">\h</span>exo-部署博客.md</div></pre></td></tr></table></figure>
+<p>执行完后，会在source_posts\目录下新建文章hexo-部署博客.md，然后自己用Markdown语法编写文章</p>
+<p>完成后：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">hexo</span> g <span class="comment"># 生成静态文件,</span></div><div class="line">hexo d <span class="comment"># 部署到git</span></div></pre></td></tr></table></figure>
+<h4 id="注意：每新建文章都需要执行。"><a href="#注意：每新建文章都需要执行。" class="headerlink" title="注意：每新建文章都需要执行。"></a><strong>注意</strong>：每新建文章都需要执行。</h4>
+	</div>
+	<div class="meta split">
+		
+			<span>本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次</span>
+		
+		<time class="post-date" datetime="2017-04-06T11:09:40.000Z" itemprop="datePublished">2017-04-06</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="hexo-部署博客" data-title="hexo-部署博客" data-url="http://yoursite.com/2017/04/06/hexo-部署博客/"></div>
+<script type="text/javascript">
+
+var duoshuoQuery = {short_name:"yumemor"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+  
+</div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
+
+
+
+
+
+<div class="fat-footer">
+	<div class="wrapper">
+		<div class="layout layout--center">
+			<div class="layout__item palm-mb">
+				<div class="media">
+					<img class="headimg" src='http://om733u7yz.bkt.clouddn.com/12.jpg' alt='Kun'>
+					<div class="media__body">
+						<h4>k-blog</h4>
+						<p class='site-description'>null</p>
+					</div>
+				</div>
+				<div class="author-contact">
+					<ul>
+						
+							
+							<li>
+				        		<a href="http://weibo.com/5497648979/" target="_blank">
+				        			
+				        				<i class="iconfont icon-weibo"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://user.qzone.qq.com/1666845868/" target="_blank">
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://www.zhihu.com/people/yumemor" target="_blank">
+				        			
+										<i class="iconfont icon-zhihu"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer" role="contentinfo">
+	<div class="wrapper wrapper--wide split split--responsive">
+		
+			<span>本站总访问量 <span id="busuanzi_value_site_pv"></span> 次, 访客数 <span id="busuanzi_value_site_uv"></span> 人次</span>
+		
+		<span>Theme by <a href="http://github.com/kunphp">Kun</a>. Powered by <a href="http://hexo.io">Hexo</a></span>
+	</div>
+</footer>
+
+	<!-－这里导入了 lib.js 里面涵盖了 jQuery 等框架 所以注释掉-->
+	<!--<script src="http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js"></script>-->
+	<script src="/js/lib.js"></script>
+	<script src="/js/google-code-prettify/prettify.js"></script>
+	<script src="/js/module.js"></script>
+	<script src="/js/script.js"></script>
+	
+		<script async src="http://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+	<script type='text/javascript'>
+		//代码高亮
+		$(document).ready(function(){
+	 		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   			prettyPrint();
+		});
+	</script>
+	</body>
+</html>
