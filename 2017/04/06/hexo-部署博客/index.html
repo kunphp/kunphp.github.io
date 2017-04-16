@@ -47,7 +47,7 @@
 			
 				
 				<li class="current-menu-item">
-					<a href="https://kunphp.github.io/" target="">首页</a>
+					<a href="http://blog.itkun.cn/" target="">首页</a>
 				</li>
 			
 				
@@ -104,7 +104,7 @@
 </blockquote>
 </li>
 </ul>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ <span class="keyword">node</span> <span class="title">-v</span></div><div class="line">v6.<span class="number">10.1</span></div><div class="line"></div><div class="line">$ npm -v</div><div class="line"><span class="number">3.10</span>.<span class="number">10</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ node -v</div><div class="line">v6.10.1</div><div class="line"></div><div class="line">$ npm -v</div><div class="line">3.10.10</div></pre></td></tr></table></figure>
 <p>说明已经安装完成了。</p>
 <ul>
 <li>安装了git for windows（或者其它git客户端）</li>
@@ -127,12 +127,12 @@
 <p>b、hexo不同版本差别比较大，网上很多文章的配置信息都是基于2.x的，所以注意不要被误导；</p>
 <p>c、hexo有2种_config.yml文件，一个是根目录下的全局的_config.yml，一个是各个theme下的；</p>
 </blockquote>
-<h4 id="3、安装"><a href="#3、安装" class="headerlink" title="3、安装"></a>3、安装</h4><figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$  npm <span class="keyword">install</span> -g hexo</div></pre></td></tr></table></figure>
+<h4 id="3、安装"><a href="#3、安装" class="headerlink" title="3、安装"></a>3、安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$  npm install -g hexo</div></pre></td></tr></table></figure>
 <h4 id="4、初始化"><a href="#4、初始化" class="headerlink" title="4、初始化"></a>4、初始化</h4><p>在电脑的某个地方新建一个名为hexo的文件夹（名字可以随便取），比如我的是d:\wamp64\www\hexo，由于这个文件夹将来就作为你存放代码的地方，所以最好不要随便放。</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd <span class="meta-keyword">/d/</span>wamp64<span class="meta-keyword">/www/</span>hexo/</div><div class="line">$ hexo init</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> /d/wamp64/www/hexo/</div><div class="line">$ hexo init</div></pre></td></tr></table></figure>
 <p>hexo会自动下载一些文件到这个目录，包括node_modules，目录结构如下图：</p>
 <p><img src="http://onpn9b1bp.bkt.clouddn.com/J%29BIFV7XUE%7BV8RY%7BXCJT%7B$9.png" alt="image"></p>
-<h4 id="5、生成静态文件，启动本地服务查看"><a href="#5、生成静态文件，启动本地服务查看" class="headerlink" title="5、生成静态文件，启动本地服务查看"></a>5、生成静态文件，启动本地服务查看</h4><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>hexo g <span class="comment"># 生成</span></div><div class="line"><span class="variable">$ </span>hexo s <span class="comment"># 启动服务</span></div></pre></td></tr></table></figure>
+<h4 id="5、生成静态文件，启动本地服务查看"><a href="#5、生成静态文件，启动本地服务查看" class="headerlink" title="5、生成静态文件，启动本地服务查看"></a>5、生成静态文件，启动本地服务查看</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g <span class="comment"># 生成</span></div><div class="line">$ hexo s <span class="comment"># 启动服务</span></div></pre></td></tr></table></figure>
 <p>执行以上命令之后，hexo就会在项目目录下面产生public文件夹并生成相关html文件，这些文件将来都是要提交到github去的：</p>
 <p>hexo s是开启本地预览服务，打开浏览器访问 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 即可看到内容。</p>
 <p>第一次初始化的时候hexo已经帮我们写了一篇名为 Hello World 的文章，默认的主题比较丑，打开时就是这个样子：<br><img src="http://onpn9b1bp.bkt.clouddn.com/CVP%7DSW%297B0~GM_85%7BE_F~RK.png" alt="image"></p>
@@ -140,32 +140,32 @@
 <ul>
 <li><p><strong>修改配置文件：</strong></p>
 <p>修改_config.yml中的theme: landscape改为theme: varaint<br>然后重新生成静态页面</p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">hexo g</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>如果出现一些莫名其妙的问题，可以先执行<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">hexo clean</span></div></pre></td></tr></table></figure></p>
+<p>如果出现一些莫名其妙的问题，可以先执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo clean</div></pre></td></tr></table></figure></p>
 <p>来清理一下public的内容，然后再来重新生成和发布。</p>
 <p>总结：以上，一步一步执行下来之后发现个人的博客已经在本地生成了并且可以查看了，但是只能是自己看到，能不能让其他人查阅呢？</p>
 <hr>
 <h2 id="三、上传到github或者码云等托管控制器上面"><a href="#三、上传到github或者码云等托管控制器上面" class="headerlink" title="三、上传到github或者码云等托管控制器上面"></a>三、上传到github或者码云等托管控制器上面</h2><p>如果你一切都配置好了，发布上传很容易，一句hexo d就搞定，当然关键还是你要把所有东西配置好。</p>
-<h4 id="1、ssh-key肯定要配置好。"><a href="#1、ssh-key肯定要配置好。" class="headerlink" title="1、ssh key肯定要配置好。"></a>1、ssh key肯定要配置好。</h4><h4 id="2、其次，配置-config-yml中有关deploy的部分："><a href="#2、其次，配置-config-yml中有关deploy的部分：" class="headerlink" title="2、其次，配置_config.yml中有关deploy的部分："></a>2、其次，配置_config.yml中有关deploy的部分：</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">deploy</span>:</div><div class="line">  <span class="attribute">type</span>: git</div><div class="line">  <span class="attribute">repository</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:kunphp/kunphp.github.io.git</div><div class="line">  <span class="attribute">branch</span>: master</div></pre></td></tr></table></figure>
+<h4 id="1、ssh-key肯定要配置好。"><a href="#1、ssh-key肯定要配置好。" class="headerlink" title="1、ssh key肯定要配置好。"></a>1、ssh key肯定要配置好。</h4><h4 id="2、其次，配置-config-yml中有关deploy的部分："><a href="#2、其次，配置-config-yml中有关deploy的部分：" class="headerlink" title="2、其次，配置_config.yml中有关deploy的部分："></a>2、其次，配置_config.yml中有关deploy的部分：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repository: git@github.com:kunphp/kunphp.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
 <p>配置完成后，执行部署：</p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">hexo d</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d</div></pre></td></tr></table></figure>
 <p>会发现报如下错误：</p>
-<figure class="highlight subunit"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">ERROR </span>Deployer not found: git</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ERROR Deployer not found: git</div></pre></td></tr></table></figure>
 <p>原因是还需要安装一个插件：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
 <p>安装完插件后，再执行hexo d 将文件部署到github上<br>至此，任何人就可以通过<a href="https://kunphp.github.io/来访问我们部署的个人博客了。" target="_blank" rel="external">https://kunphp.github.io/来访问我们部署的个人博客了。</a></p>
 <p>当然，有同学会嫌弃自己的这个网址难记，砸门能不能配上自己的域名进行访问呢？可以滴！前提是有服务器和域名的土豪们。双手奉上配置：</p>
 <ul>
 <li><p>在项目根目录找到source文件，在source下创建一个CNAME文件(无扩展名)，填写下面内容：</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//你要绑定的域名</span></div><div class="line">wangyukun.online</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//你要绑定的域名</div><div class="line">wangyukun.online</div></pre></td></tr></table></figure>
 </li>
 <li><p>去你购买域名的服务商空间里找到域名解析的选项,修改如下:<br><img src="http://om733u7yz.bkt.clouddn.com/zzz.png" alt="image"></p>
 </li>
 <li>最后执行</li>
 </ul>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">$</span> hexo d <span class="comment">// 自动部署到远程仓库根目录下</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo d // 自动部署到远程仓库根目录下</div></pre></td></tr></table></figure>
 <p>总结：</p>
 <p>1、在GitHub创建仓库的时候要求，用户名.github.io格式。</p>
 <p>2、在部署文件上传远程仓库时，要安装npm install hexo-deployer-git –save这个插件。</p>
@@ -173,10 +173,10 @@
 <h2 id="四、添加一篇文章"><a href="#四、添加一篇文章" class="headerlink" title="四、添加一篇文章"></a>四、添加一篇文章</h2><ul>
 <li>添加文章 hexo n 文章名 #</li>
 </ul>
-<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo n hexo-部署博客</div><div class="line">INFO  Created: D:<span class="symbol">\w</span>amp64<span class="symbol">\w</span>ww<span class="symbol">\h</span>exo<span class="symbol">\s</span>ource<span class="symbol">\_</span>posts<span class="symbol">\h</span>exo-部署博客.md</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo n hexo-部署博客</div><div class="line">INFO  Created: D:\wamp64\www\hexo\<span class="built_in">source</span>\_posts\hexo-部署博客.md</div></pre></td></tr></table></figure>
 <p>执行完后，会在source_posts\目录下新建文章hexo-部署博客.md，然后自己用Markdown语法编写文章</p>
 <p>完成后：</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">hexo</span> g <span class="comment"># 生成静态文件,</span></div><div class="line">hexo d <span class="comment"># 部署到git</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo g <span class="comment"># 生成静态文件,</span></div><div class="line">hexo d <span class="comment"># 部署到git</span></div></pre></td></tr></table></figure>
 <h4 id="注意：每新建文章都需要执行。"><a href="#注意：每新建文章都需要执行。" class="headerlink" title="注意：每新建文章都需要执行。"></a><strong>注意</strong>：每新建文章都需要执行。</h4>
 	</div>
 	<div class="meta split">
