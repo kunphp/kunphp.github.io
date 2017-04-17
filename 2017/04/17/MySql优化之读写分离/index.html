@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>mysql优化之读写分离 | k-blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+      <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/js/google-code-prettify/tomorrow-night-eighties.min.css">
+
+  </head>
+
+  <body>
+
+<header>
+	<a id="logo" href="/" title="k-blog">
+	<img src="/favicon.png" alt="k-blog"></a>
+	
+	
+		<!--搜索栏-->
+		<i class="js-toggle-search iconfont icon-search"></i>
+
+
+<form class="js-search search-form search-form--modal" method="get" action="http://gushi.li" role="search">
+	<div class="search-form__inner">
+		<div>
+			<i class="iconfont icon-search"></i>
+			<input class="text-input" placeholder="Enter Key..." type="search">
+		</div>
+	</div>
+</form>
+	
+
+	
+		<!--侧边导航栏-->
+		<a id="nav-toggle" href="#"><span></span></a>
+
+<nav>
+	<div class="menu-top-container">
+		<ul id="menu-top" class="menu">
+			
+				
+				<li class="current-menu-item">
+					<a href="http://blog.itkun.cn/" target="">首页</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="null" target="">闲弄</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="null" target="">杂</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="null" target="">我</a>
+				</li>
+			
+		</ul>
+	</div>
+</nav>
+	
+
+</header>
+<div class="m-header ">
+	<section id="hero1" class="hero">
+		<div class="inner">
+		</div>
+	</section>
+	
+		<figure class="top-image" data-enable=true></figure>
+	
+</div>
+
+<!--文章列表-->
+<div class="wrapper">
+  
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      mysql优化之读写分离
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<h1 id="mysql优化之读写分离"><a href="#mysql优化之读写分离" class="headerlink" title="mysql优化之读写分离"></a>mysql优化之读写分离</h1><hr>
+<blockquote>
+<p>读写分离概述：</p>
+</blockquote>
+<p>读写分离，基本的原理是让主数据库处理事务性增、改、删操作（INSERT、UPDATE、DELETE），而从数据库处理SELECT查询操作。数据库复制被用来把事务性操作导致的变更同步到集群中的从数据库。</p>
+<blockquote>
+<p>为什么要读写分离呢？</p>
+</blockquote>
+<p>因为数据库的“写”（写10000条数据到mysql可能要3分钟）操作是比较耗时的。</p>
+<p>但是数据库的“读”（从mysql读10000条数据可能只要5秒钟）。</p>
+<p>所以我们可以采用读写分离，来提高数据库查询的效率。</p>
+<blockquote>
+<p>读写分离，为什么能提升性能呢？</p>
+</blockquote>
+<p>举例：<br>如果不分开，所有操作都在一个数据库中（比如mysql）中进行，如果并发用户有1000个。即mysql数据库，得为1000个用户提供查询、写入等数据库服务。</p>
+<p>读写分离之后，msyql-master，msyql-slave。就相当于将1000个并发用户，分流了，一部分用户（如800人）对mysql-slave数据库进行读操作，另一部分用户（如200人）对mysql-master数据库进行操作。</p>
+<h2 id="即以前1000个用户的事情，由一个东西来干；读写分离后，1000个用户的事情，由两个东西来干。"><a href="#即以前1000个用户的事情，由一个东西来干；读写分离后，1000个用户的事情，由两个东西来干。" class="headerlink" title="即以前1000个用户的事情，由一个东西来干；读写分离后，1000个用户的事情，由两个东西来干。"></a>即以前1000个用户的事情，由一个东西来干；读写分离后，1000个用户的事情，由两个东西来干。</h2><blockquote>
+<p>读写分离的两种实现思路:</p>
+</blockquote>
+<ol>
+<li>在代码中实现(框架中实现读写分离);–本次主讲</li>
+<li>利用数据库代理(中间件 例如:官方的mysql-proxy) –暂时未完成</li>
+</ol>
+<h2 id="一-TP框架实现mysql读写分离"><a href="#一-TP框架实现mysql读写分离" class="headerlink" title="一. TP框架实现mysql读写分离"></a>一. TP框架实现mysql读写分离</h2><hr>
+<blockquote>
+<p>ThinkPHP内置了分布式数据库的支持，包括主从式数据库的读写分离，但是分布式数据库必须是相同的数据库类型。</p>
+</blockquote>
+<p>分布式数据库配置定义:<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="string">'DB_DEPLOY_TYPE'</span>=&gt; <span class="number">1</span>,  <span class="comment">//设置分布式数据库支持</span></div><div class="line"><span class="string">'DB_TYPE'</span>       =&gt; <span class="string">'mysql'</span>,<span class="comment">//分布式数据库类型必须相同</span></div><div class="line"><span class="string">'DB_HOST'</span>       =&gt; <span class="string">'192.168.2.181,192.168.2.182'</span>,</div><div class="line"><span class="string">'DB_NAME'</span>       =&gt; <span class="string">'test'</span>,<span class="comment">//如果相同可以不用定义多个</span></div><div class="line"><span class="string">'DB_USER'</span>       =&gt; <span class="string">'itczp'</span>,</div><div class="line"><span class="string">'DB_PWD'</span>        =&gt; <span class="string">'itczp'</span>,</div><div class="line"><span class="string">'DB_PORT'</span>       =&gt; <span class="string">'3306'</span>,</div><div class="line"><span class="string">'DB_PREFIX'</span>     =&gt; <span class="string">''</span>,</div></pre></td></tr></table></figure></p>
+<p>分布式数据库的读写是否分离，默认的情况下读写不分离，也就是每台服务器都可以进行读写操作，<br>对于主从式数据库而言，需要设置读写分离，通过下面的设置就可以：<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'DB_RW_SEPARATE'</span>=&gt;<span class="keyword">true</span>, <span class="comment">//开启读写分离</span></div></pre></td></tr></table></figure></p>
+<p>详细可看tp手册 -模型-分布式数据库支持</p>
+<h3 id="特别注意"><a href="#特别注意" class="headerlink" title="特别注意:"></a>特别注意:</h3><p>如果你用的是原生SQL，那么需要注意系统的默认规则：写操作必须用模型的execute方法，读操作必须用模型的query方法，否则会发生主从读写错乱的情况。</p>
+<p>==备注==:主从数据库的数据同步工作不在框架实现++，需要数据库考虑自身的同步或者复制机制。</p>
+<h2 id="二-yii框架实现mysql读写分离"><a href="#二-yii框架实现mysql读写分离" class="headerlink" title="二.yii框架实现mysql读写分离"></a>二.yii框架实现mysql读写分离</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 配置主服务器</span></div><div class="line">	 <span class="string">'class'</span> =&gt; <span class="string">'yii\db\Connection'</span>,</div><div class="line">	 <span class="string">'dsn'</span> =&gt; <span class="string">'mysql:host=192.168.2.181;dbname=test'</span>,</div><div class="line">	 <span class="string">'username'</span> =&gt; <span class="string">'itczp'</span>,</div><div class="line">	 <span class="string">'password'</span> =&gt; <span class="string">'itczp'</span>  ,</div><div class="line">	 <span class="comment">// 配置从服务器</span></div><div class="line">	 <span class="string">'slaveConfig'</span> =&gt;</div><div class="line">	 [</div><div class="line">	 	<span class="string">'username'</span> =&gt; <span class="string">'itczp'</span>,</div><div class="line">	 	<span class="string">'password'</span> =&gt; <span class="string">'itczp'</span>,</div><div class="line">	 	<span class="string">'attributes'</span> =&gt;</div><div class="line">	 	[</div><div class="line">	 		<span class="comment">// 连接超时时间</span></div><div class="line">	 		PDO::ATTR_TIMEOUT =&gt; <span class="number">10</span>,</div><div class="line">	 	],</div><div class="line">	 ],</div><div class="line">	 <span class="comment">// 配置从服务器组</span></div><div class="line">	 <span class="string">'slaves'</span> =&gt;</div><div class="line">	 [</div><div class="line">	              [<span class="string">'dsn'</span> =&gt; <span class="string">'mysql:host=192.168.2.182;dbname=test'</span>],</div><div class="line">	              <span class="comment">// ['dsn' =&gt; 'mysql:host=192.168.2.183;dbname=test'],</span></div><div class="line">	              <span class="comment">// ['dsn' =&gt; 'dsn for slave server 3'],</span></div><div class="line">	              <span class="comment">// ['dsn' =&gt; 'dsn for slave server 4'],</span></div><div class="line">	 ],</div></pre></td></tr></table></figure>
+<hr>
+<p>以上的配置实现了一主多从的结构，从服务器用以执行读查询，主服务器执行写入查询，读写分离的功能由后台代码自动完成.调用者无须关心.</p>
+<h2 id="laravel框架实现mysql读写分离"><a href="#laravel框架实现mysql读写分离" class="headerlink" title="laravel框架实现mysql读写分离"></a>laravel框架实现mysql读写分离</h2><p>源码分析:<br><a href="https://laravel-china.org/topics/1879/laravel-5-configuration-read-and-write-separation-and-source-analysis" target="_blank" rel="external">https://laravel-china.org/topics/1879/laravel-5-configuration-read-and-write-separation-and-source-analysis</a></p>
+
+	</div>
+	<div class="meta split">
+		
+			<span>本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次</span>
+		
+		<time class="post-date" datetime="2017-04-17T05:09:40.000Z" itemprop="datePublished">2017-04-17</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="MySql优化之读写分离" data-title="mysql优化之读写分离" data-url="http://yoursite.com/2017/04/17/MySql优化之读写分离/"></div>
+<script type="text/javascript">
+
+var duoshuoQuery = {short_name:"yumemor"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+  
+</div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
+
+
+
+
+
+<div class="fat-footer">
+	<div class="wrapper">
+		<div class="layout layout--center">
+			<div class="layout__item palm-mb">
+				<div class="media">
+					<img class="headimg" src='http://om733u7yz.bkt.clouddn.com/12.jpg' alt='Kun'>
+					<div class="media__body">
+						<h4>k-blog</h4>
+						<p class='site-description'>null</p>
+					</div>
+				</div>
+				<div class="author-contact">
+					<ul>
+						
+							
+							<li>
+				        		<a href="http://weibo.com/5497648979/" target="_blank">
+				        			
+				        				<i class="iconfont icon-weibo"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://user.qzone.qq.com/1666845868/" target="_blank">
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://www.zhihu.com/people/yumemor" target="_blank">
+				        			
+										<i class="iconfont icon-zhihu"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer" role="contentinfo">
+	<div class="wrapper wrapper--wide split split--responsive">
+		
+			<span>本站总访问量 <span id="busuanzi_value_site_pv"></span> 次, 访客数 <span id="busuanzi_value_site_uv"></span> 人次</span>
+		
+		<span>Theme by <a href="http://github.com/kunphp">Kun</a>. Powered by <a href="http://hexo.io">Hexo</a></span>
+	</div>
+</footer>
+
+	<!-－这里导入了 lib.js 里面涵盖了 jQuery 等框架 所以注释掉-->
+	<!--<script src="http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js"></script>-->
+	<script src="/js/lib.js"></script>
+	<script src="/js/google-code-prettify/prettify.js"></script>
+	<script src="/js/module.js"></script>
+	<script src="/js/script.js"></script>
+	
+		<script async src="http://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+	<script type='text/javascript'>
+		//代码高亮
+		$(document).ready(function(){
+	 		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   			prettyPrint();
+		});
+	</script>
+	</body>
+</html>
