@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>Hello World | k-blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+      <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/js/google-code-prettify/tomorrow-night-eighties.min.css">
+
+  </head>
+
+  <body>
+
+<header>
+	<a id="logo" href="/" title="k-blog">
+	<img src="/favicon.png" alt="k-blog"></a>
+	
+	
+		<!--搜索栏-->
+		<i class="js-toggle-search iconfont icon-search"></i>
+
+
+<form class="js-search search-form search-form--modal" method="get" action="http://gushi.li" role="search">
+	<div class="search-form__inner">
+		<div>
+			<i class="iconfont icon-search"></i>
+			<input class="text-input" placeholder="Enter Key..." type="search">
+		</div>
+	</div>
+</form>
+	
+
+	
+		<!--侧边导航栏-->
+		<a id="nav-toggle" href="#"><span></span></a>
+
+<nav>
+	<div class="menu-top-container">
+		<ul id="menu-top" class="menu">
+			
+				
+				<li class="current-menu-item">
+					<a href="http://blog.itkun.cn/" target="">首页</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="null" target="">闲弄</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="null" target="">杂</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="null" target="">我</a>
+				</li>
+			
+		</ul>
+	</div>
+</nav>
+	
+
+</header>
+<div class="m-header ">
+	<section id="hero1" class="hero">
+		<div class="inner">
+		</div>
+	</section>
+	
+		<figure class="top-image" data-enable=true></figure>
+	
+</div>
+
+<!--文章列表-->
+<div class="wrapper">
+  
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      Hello World
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<h1 id="中文分词"><a href="#中文分词" class="headerlink" title="中文分词"></a>中文分词</h1><h4 id="你只有非常努力，才能看起来毫不费力"><a href="#你只有非常努力，才能看起来毫不费力" class="headerlink" title="你只有非常努力，才能看起来毫不费力"></a>你只有非常努力，才能看起来毫不费力</h4><p>  中文分词(Chinese Word Segmentation) </p>
+<p>  指的是将一个汉字序列切分成一个一个单独的词。分词就是将连续的字序列按照一定的规范<br>  重新组合成词序列的过程。我们知道，在英文的行文中，单词之间是以空格作为自然分界符<br>  的，而中文只是字、句和段能通过明显的分界符来简单划界，唯独词没有一个形式上的分<br>  界符，虽然英文也同样存在短语的划分问题，不过在词这一层上，中文比之英文要复杂的<br> 多、困难的多。<br>  <img src="http://img2.tuicool.com/Ab2U7b.jpg" alt="image"></p>
+<h2 id="1-1-什么是CoreSeek-Sphinx"><a href="#1-1-什么是CoreSeek-Sphinx" class="headerlink" title="1.1. 什么是CoreSeek/Sphinx"></a>1.1. 什么是CoreSeek/Sphinx</h2><h4 id="人不犯我，我不犯人；人若犯我，礼让三分；人再犯我，我还一针；人还犯我，斩草除根。"><a href="#人不犯我，我不犯人；人若犯我，礼让三分；人再犯我，我还一针；人还犯我，斩草除根。" class="headerlink" title="人不犯我，我不犯人；人若犯我，礼让三分；人再犯我，我还一针；人还犯我，斩草除根。"></a>人不犯我，我不犯人；人若犯我，礼让三分；人再犯我，我还一针；人还犯我，斩草除根。</h4><p>Sphinx是一个在GPLv2下分发的全文检索引擎；Coreseek 是一个可供企业使用的、基于Sphinx（可独立于Sphinx原始版本运行）的中文全文检索引擎，按照GPLv2协议发行。商业使用（例如, 嵌入到其他程序中）需要联系我们以获得商业授权。</p>
+<p>一般而言，Sphinx是一个独立的全文搜索引擎；而Coreseek是一个支持中文的全文搜索引擎，意图为其他应用提供高速、低空间占用、高相关度结果的中文全文搜索能力。CoreSeek/Sphinx可以非常容易的与SQL数据库和脚本语言集成。</p>
+<p>应用程序可以通过三种不同的接口方式来与Sphinx搜索服务(searchd)通信： a) 通过原生的搜索 API (SphinxAPI), b) 通过Sphinx自身支持的MySQL网络协议 (使用命名为SphinxQL的SQL精简子集), 或者 c) 通过MySQL 服务端的存储插件引擎(SphinxSE)。当然， 还可以通过可以使用 a)、b)、c) 的应用程序来构建webservice来为其他应用程序提供通信</p>
+<p>在Sphinx发行版本中提供的原生搜索API支持PHP、Python、Perl、Rudy和Java。搜索API非常轻量化，可以在几个小时之内移植到新的语言上。第三方API接口和插件提供了对Perl、C#、Haskell、Ruby-on-Rails支持，以及对其他可能的语言或者框架的支持。</p>
+<p>从版本1.10-beta开始，Sphinx支持两种不同的索引后端：“磁盘（disk）”索引后端和“实时索引（realtime）”（RT）索引后端。磁盘索引支持在线全文索引重建，但是仅支持非文本（属性）数据的在线更新。RT实时索引在此基础上，又增加了在线的全文索引更新。在此之前的版本仅支持磁盘索引。</p>
+<p>使用命名为数据源的接口，数据可以被加载到磁盘索引。当前系统内置MySQL和PostgreSQL以及ODBC兼容（MS SQL、Oracle等） 数据库数据源的支持，也支持从管道标准输入读取特定格式的XML数据。通过适当修改源代码，用户可以自行增加新的数据源驱动（例如：对其他类型的DBMS的原生支持）。在Coreseek发行的版本中，用户还可以使用Python脚本作为数据源来获取任何已知世界和未知世界的数据，这极大的扩展了数据源的来源。从1.10-beta版本开始的RT实时索引，只能使用MySQL接口通过SphinxQL来操作。</p>
+<p>Sphinx 是SQL Phrase Index的缩写，但不幸的和CMU的Sphinx项目重名。</p>
+<p>Coreseek (<a href="http://www.coreseek.cn/" target="_blank" rel="external">http://www.coreseek.cn/</a>) </p>
+<p>1.2. CoreSeek/Sphinx 的特性</p>
+<p>Sphinx 的主要特性：</p>
+<p>索引和搜索性能优异；</p>
+<p>先进的索引和查询工具(灵活且功能丰富的文本分析器，查询语言，以及多种不同的排序方式等等);</p>
+<p>先进的结果集分析处理 (SELECT 可以使用表达式, WHERE, ORDER BY, GROUP BY<br>等对全文搜索结果集进行过滤)；</p>
+<p>实践证实可扩展性支持数十亿文档记录，TB级别的数据，以及每秒数千次查询;</p>
+<p>易于集成SQL和XML数据源，并可使用SphinxAPI、SphinxQL或者SphinxSE搜索接口</p>
+<p>易于通过分布式搜索进行扩展</p>
+<p>Sphinx 的详细特性：</p>
+<p>高速的索引建立(在当代CPU上，峰值性能可达到10 ~ 15MB/秒);</p>
+<p>高性能的搜索 (在1.2G文本，100万条文档上进行搜索，支持高达每秒150~250次查询);</p>
+<p>高扩展性 (最大的索引集群超过30亿条文档，最繁忙时刻的查询峰值达到每天5千万次);</p>
+<p>提供了优秀的相关度算法，基于短语相似度和统计（BM25）的复合Ranking方法;</p>
+<p>支持分布式搜索功能;</p>
+<p>提供文档片段（摘要以及高亮）生成功能;</p>
+<p>内建支持SphinxAPI和SphinxQL搜索箭口，也可作为MySQL的存储引擎提供搜索服务;</p>
+<p>支持布尔、短语、词语相似度等多种检索模式;</p>
+<p>文档支持多个全文检索字段(缺省配置下，最大不超过32个);</p>
+<p>文档支持多个额外的属性信息(例如：分组信息，时间戳等);</p>
+<p>支持查询停止词;</p>
+<p>支持词形学处理;</p>
+<p>支持特殊词汇处理;</p>
+<p>支持单一字节编码和UTF-8编码;</p>
+<p>内建支持英语、俄语、捷克语词干化处理; 对 法语，西班牙语，葡萄牙语，意大利语，罗马尼亚语，德国，荷兰，瑞典，挪威，丹麦，芬兰，匈牙利等语言 的支持可通过第三方的 libstemmer 库 建立);</p>
+<p>原生的MySQL支持(同时支持MyISAM 、InnoDB、NDB、Archive等所有类型的数据表 );</p>
+<p>原生的PostgreSQL 支持;</p>
+<p>原生的ODBC兼容数据库支持 (MS SQL, Oracle, 等) ;</p>
+<p>…多达50多项其他功能没有在此一一列出，请参阅API和配置手册！</p>
+<h3 id="1-3-为什么要使用Coreseek"><a href="#1-3-为什么要使用Coreseek" class="headerlink" title="1.3  为什么要使用Coreseek"></a>1.3  为什么要使用Coreseek</h3><h4 id="有钱人终成眷属！"><a href="#有钱人终成眷属！" class="headerlink" title="有钱人终成眷属！"></a>有钱人终成眷属！</h4><pre><code>mysql在大量数据（100W+），以及无法命中索引的查询语句中性能 低下。 
+
+Coreseek的查询性能非常高，可以快速的根据条件检索出符合条件的 
+
+记录主键，然后我们可以根据这个主键快速的找到mysql中对应记录的 详细信息。 
+
+可以提供高速、低空间占用、高相关度结果的中文全文检索。 Coreseek可以非常容易的与SQL数据库和脚本语言集成。 
+
+支持分布式搜索扩展，通过在不同的服务器上对数据进行分片搜索， 提高性能
+</code></pre><h3 id="1-4-那些地方适合使用Coreseek"><a href="#1-4-那些地方适合使用Coreseek" class="headerlink" title="1.4  那些地方适合使用Coreseek"></a>1.4  那些地方适合使用Coreseek</h3><h4 id="我喜欢黑色！黑色比较诱惑，最主要是有超强的隐藏能力，不怕脏！"><a href="#我喜欢黑色！黑色比较诱惑，最主要是有超强的隐藏能力，不怕脏！" class="headerlink" title="我喜欢黑色！黑色比较诱惑，最主要是有超强的隐藏能力，不怕脏！"></a>我喜欢黑色！黑色比较诱惑，最主要是有超强的隐藏能力，不怕脏！</h4><h4 id="①-当你的服务用户很多，经常会有大量查询请求，而又无法高效的返回-查询结果的时候"><a href="#①-当你的服务用户很多，经常会有大量查询请求，而又无法高效的返回-查询结果的时候" class="headerlink" title="①  当你的服务用户很多，经常会有大量查询请求，而又无法高效的返回 查询结果的时候"></a>①  当你的服务用户很多，经常会有大量查询请求，而又无法高效的返回 查询结果的时候</h4><h4 id="②-典型的应用有"><a href="#②-典型的应用有" class="headerlink" title="②  典型的应用有"></a>②  典型的应用有</h4><h6 id="1-关键词搜索。"><a href="#1-关键词搜索。" class="headerlink" title="1.关键词搜索。"></a>1.关键词搜索。</h6><pre><code>常用来用来搭建论坛和博客的内建检索引擎。 
+</code></pre><h5 id=""><a href="#" class="headerlink" title=" "></a> </h5><h6 id="2-关联搜索。"><a href="#2-关联搜索。" class="headerlink" title="2.关联搜索。"></a>2.关联搜索。</h6><pre><code>即完全匹配的相关性条目进行关联展示。体验就像百度搜索框 的自动补全建议
+</code></pre><h6 id="3-相关词推荐。"><a href="#3-相关词推荐。" class="headerlink" title="3.相关词推荐。"></a>3.相关词推荐。</h6><pre><code>这个跟关联搜索类似，但是通常出现在相关词推荐中。简单的 实现就是提取自己库的关键词作为一个数据源，然后在其中搜 索与查询词相关的词。体验就像百度搜索页底部的”相关搜索” 区域
+</code></pre><h3 id="1-5-国内全文检索的几个典型应用场景。"><a href="#1-5-国内全文检索的几个典型应用场景。" class="headerlink" title="1.5  国内全文检索的几个典型应用场景。"></a>1.5  国内全文检索的几个典型应用场景。</h3><h4 id="我也曾有过一双翅膀，不过我没用它在天上翱翔，而是放在锅里炖汤。"><a href="#我也曾有过一双翅膀，不过我没用它在天上翱翔，而是放在锅里炖汤。" class="headerlink" title="我也曾有过一双翅膀，不过我没用它在天上翱翔，而是放在锅里炖汤。"></a>我也曾有过一双翅膀，不过我没用它在天上翱翔，而是放在锅里炖汤。</h4><h6 id="您在运营知识分享型的社区-Forum-："><a href="#您在运营知识分享型的社区-Forum-：" class="headerlink" title="您在运营知识分享型的社区(Forum)："></a>您在运营知识分享型的社区(Forum)：</h6><pre><code>大量的新来用户对某些简单的问题反复发帖询问，版主不胜其烦；
+
+大量宝贵的答案、精辟的见解被淹没在回复中，通过帖子主题检索不到；
+
+为了降低服务器负载，您不得不限制用户每30秒才能使用搜索功能一次，用户很难受，您很难过；
+
+为了提高服务质量，您寄希望于Google、百度这样的全网搜索引擎，但是您的数据更新可能不及时， 
+
+更要命的是有些私密的主题，您不想让除了您和您的注册用户以外的第三方知道
+</code></pre><h6 id="您在运营社会化社交网络（SNS）："><a href="#您在运营社会化社交网络（SNS）：" class="headerlink" title="您在运营社会化社交网络（SNS）："></a>您在运营社会化社交网络（SNS）：</h6><pre><code>如何让您的用户找到志同道合的朋友？
+
+如何帮助用户更好的管理自己的Blog？
+</code></pre><h6 id="您在运营电子商务网站-e-Shop-："><a href="#您在运营电子商务网站-e-Shop-：" class="headerlink" title="您在运营电子商务网站(e-Shop)："></a>您在运营电子商务网站(e-Shop)：</h6><pre><code>如何让每个访客尽快找到他/她感兴趣的商品，达成销售？
+</code></pre><h6 id="您每天需要处理大量的电子文档-CMS-："><a href="#您每天需要处理大量的电子文档-CMS-：" class="headerlink" title="您每天需要处理大量的电子文档(CMS)："></a>您每天需要处理大量的电子文档(CMS)：</h6><pre><code>如何在最短的时间内找到您需要的文件
+
+如何利用现有文件的内容加速您新文档的撰写工作
+</code></pre><h3 id="1-6-哪些地方不适合Coreseek"><a href="#1-6-哪些地方不适合Coreseek" class="headerlink" title="1.6  哪些地方不适合Coreseek"></a>1.6  哪些地方不适合Coreseek</h3><h4 id="女为悦己者容男为悦己者穷！"><a href="#女为悦己者容男为悦己者穷！" class="headerlink" title="女为悦己者容男为悦己者穷！"></a>女为悦己者容男为悦己者穷！</h4><pre><code>对查询效率无要求（不在乎性能，当然无需使用专门的检索引擎） 
+
+对数据实时性要求很高的需求
+
+数据经常变动（数据频繁变动，将会导致检索结果不准确，并且频繁 的重建主索引导致性能太低）
+</code></pre><h3 id="1-7-Coreseek的局限性"><a href="#1-7-Coreseek的局限性" class="headerlink" title="1.7  Coreseek的局限性"></a>1.7  Coreseek的局限性</h3><h4 id="你打扮成这样。是对这个世界有什么不满么？"><a href="#你打扮成这样。是对这个世界有什么不满么？" class="headerlink" title="你打扮成这样。是对这个世界有什么不满么？"></a>你打扮成这样。是对这个世界有什么不满么？</h4><pre><code>数据表必须有主键 
+
+主键必须为非零整型 
+
+不负责数据存储
+
+配置不够灵活
+</code></pre><p>本章节概述Coreseek安装说明, 具体环境及详细说明请见Coreseek官方中文手册: <a href="http://www.coreseek.cn/products-install/step_by_step/" target="_blank" rel="external">http://www.coreseek.cn/products-install/step_by_step/</a></p>
+<h2 id="2-1-如何得到CoreSeek-Sphinx"><a href="#2-1-如何得到CoreSeek-Sphinx" class="headerlink" title="2.1. 如何得到CoreSeek/Sphinx"></a>2.1. 如何得到CoreSeek/Sphinx</h2><h4 id="废话是人际关系的第一句！"><a href="#废话是人际关系的第一句！" class="headerlink" title="废话是人际关系的第一句！"></a>废话是人际关系的第一句！</h4><p>Sphinx原始版本可以从Sphinx官方网站 sphinxsearch.com/，Coreseek可以从Coreseek官方网站 www.coreseek.cn/下载。</p>
+<p>目前，CoreSeek/Sphinx的发布包包括如下软件：</p>
+<p>indexer: 用于创建全文索引;</p>
+<p>search: 一个简单的命令行(CLI) 的测试程序，用于测试全文索引;</p>
+<p>searchd: 一个守护进程，其他软件（例如WEB程序）可以通过这个守护进程进行全文检索;</p>
+<p>sphinxapi: 一系列searchd 的客户端API 库，用于流行的Web脚本开发语言(PHP, Python, Perl, Ruby, Java).</p>
+<p>spelldump: 一个简单的命令行工具，用于从 ispell 或者 MySpell (OpenOffice内置绑定) 格式的字典中提取词条。当使用 wordforms时可用这些词条对索引进行定制.</p>
+<p>indextool: 工具程序，用来转储关于索引的多项调试信息。此工具是从版本Coreseek 3.1(Sphinx 0.9.9-rc2)开始加入的。</p>
+<p>mmseg: 工具程序和库，Coreseek用于提供中文分词和词典处理。<br>以下使用MySQL数据源进行说明.</p>
+<h4 id="2-2-去-官网-下载coreseek源码包，本文以-4-1为例"><a href="#2-2-去-官网-下载coreseek源码包，本文以-4-1为例" class="headerlink" title="2.2 去 官网 下载coreseek源码包，本文以 4.1为例"></a>2.2 去 官网 下载coreseek源码包，本文以 4.1为例</h4><h4 id="为中华而努力读书！一包中华好多钱啊。"><a href="#为中华而努力读书！一包中华好多钱啊。" class="headerlink" title="为中华而努力读书！一包中华好多钱啊。"></a>为中华而努力读书！一包中华好多钱啊。</h4><pre><code>wget http://www.coreseek.cn/uploads/csft/4.0/coreseek-4.1-beta.tar.gz
+
+tar zxvf coreseek-4.1-beta.tar.gz
+
+cd coreseek-4.1-beta/mmseg-3.2.14
+
+./bootstrap    #warning信息可以忽略，error信息则需要解决
+
+./configure --prefix=/usr/local/mmseg3
+
+make &amp;&amp; make install
+
+cd ../
+</code></pre><p>如果wget失败，可以通过ftp上传</p>
+<p>如果上传失败，给目录赋予权限</p>
+<pre><code>chmod  0777  /usr/local/src
+</code></pre><p>下载链接：<a href="http://vdisk.weibo.com/s/z-JIj1kq4Z81" target="_blank" rel="external">http://vdisk.weibo.com/s/z-JIj1kq4Z81</a></p>
+<h3 id="2-3-然后安装coreseek"><a href="#2-3-然后安装coreseek" class="headerlink" title="2.3  然后安装coreseek"></a>2.3  然后安装coreseek</h3><h4 id="优秀是一种习惯"><a href="#优秀是一种习惯" class="headerlink" title="优秀是一种习惯"></a>优秀是一种习惯</h4><pre><code>yum -y install expat expat-devel
+cd csft-3.2.14
+sh buildconf.sh   #warning信息可以忽略，error信息需要解决
+./configure --prefix=/usr/local/coreseek  --without-unixodbc --with-mmseg --with-mmseg-includes=/usr/local/mmseg3/include/mmseg/ --with-mmseg-libs=/usr/local/mmseg3/lib/ --with-mysql 
+make &amp;&amp; make install
+</code></pre><p>1./usr/local/coreseek/bin/indexer indexer文件，用于建立/更新/合并数据源的索引<br>2./usr/local/coreseek/bin/search search文件，用于测试数据源的搜索<br>3./usr/local/coreseek/bin/searchd searchd文件，负责接受查询、处理查询和返回数据集的服务</p>
+<p>#中间很有可能会出错，如果出错按如下方法处理 编辑： 打开./src/MakeFile 文件 将 </p>
+<pre><code>LIBS=-lm-lexpat-L/usr/local/lib 
+</code></pre><p>改成</p>
+<pre><code>LIBS=-lm-lexpat-liconv-L/usr/local/lib
+</code></pre><h3 id="2-4-安装mmseg"><a href="#2-4-安装mmseg" class="headerlink" title="2.4  安装mmseg"></a>2.4  安装mmseg</h3><h4 id="去食堂打了份土豆烧牛肉，结果一不小心掉了块牛肉，于是只吃到了土豆。"><a href="#去食堂打了份土豆烧牛肉，结果一不小心掉了块牛肉，于是只吃到了土豆。" class="headerlink" title="去食堂打了份土豆烧牛肉，结果一不小心掉了块牛肉，于是只吃到了土豆。"></a>去食堂打了份土豆烧牛肉，结果一不小心掉了块牛肉，于是只吃到了土豆。</h4><h3 id="2-5-测试mmseg分词，coreseek搜索（需要预先设置好字符集为zh-CN-UTF-8，确保正确显示中文）"><a href="#2-5-测试mmseg分词，coreseek搜索（需要预先设置好字符集为zh-CN-UTF-8，确保正确显示中文）" class="headerlink" title="2.5  测试mmseg分词，coreseek搜索（需要预先设置好字符集为zh_CN.UTF-8，确保正确显示中文）"></a>2.5  测试mmseg分词，coreseek搜索（需要预先设置好字符集为zh_CN.UTF-8，确保正确显示中文）</h3><h4 id="人生自古谁无死，哪个拉屎不用纸！"><a href="#人生自古谁无死，哪个拉屎不用纸！" class="headerlink" title="人生自古谁无死，哪个拉屎不用纸！"></a>人生自古谁无死，哪个拉屎不用纸！</h4><pre><code>cd testpack
+
+cat var/test/test.xml    #此时应该正确显示中文
+
+/usr/local/mmseg3/bin/mmseg -d /usr/local/mmseg3/etc var/test/test.xml
+
+/usr/local/coreseek/bin/indexer -c etc/csft.conf --all
+
+/usr/local/coreseek/bin/search -c etc/csft.conf 网络搜索
+</code></pre><figure class="highlight go"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">如果正常会显示如下</div><div class="line">words: </div><div class="line"><span class="number">1.</span><span class="string">'网络'</span>:<span class="number">1d</span>ocuments,<span class="number">1</span>hits </div><div class="line"><span class="number">2.</span><span class="string">'搜索'</span>:<span class="number">2d</span>ocuments,<span class="number">5</span>hits</div></pre></td></tr></table></figure>
+<h3 id="3-1-配置测试，测试是否可以正确运行"><a href="#3-1-配置测试，测试是否可以正确运行" class="headerlink" title="3.1 配置测试，测试是否可以正确运行"></a>3.1 配置测试，测试是否可以正确运行</h3><h4 id="当方便面的酱料包由液态变成了固态的时候，宅男就知道已经夏天走远了……"><a href="#当方便面的酱料包由液态变成了固态的时候，宅男就知道已经夏天走远了……" class="headerlink" title="当方便面的酱料包由液态变成了固态的时候，宅男就知道已经夏天走远了……"></a>当方便面的酱料包由液态变成了固态的时候，宅男就知道已经夏天走远了……</h4><pre><code>/usr/local/coreseek/bin/indexer -c /usr/local/coreseek/etc/sphinx-min.conf.dist
+</code></pre><p>以下为正常测试时的提示信息：</p>
+<pre><code> Coreseek Fulltext 3.2 [ Sphinx 0.9.9-release (r2117)]
+Copyright (c) 2007-2010,
+Beijing Choice Software Technologies Inc (http://www.coreseek.com)
+
+ using config file &apos;/usr/local/coreseek/etc/sphinx-min.conf.dist&apos;...
+total 0 reads, 0.000 sec, 0.0 kb/call avg, 0.0 msec/call avg
+total 0 writes, 0.000 sec, 0.0 kb/call avg, 0.0 msec/call avg
+</code></pre><p> 至此，coreseek基础环境可以正常安装，我们可以开始后续的工作啦。</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">注意：基础环境仅支持<span class="built_in">xml</span>数据源；如需要mysql或者python数据源，请继续按照下面的步骤操作！！！</div></pre></td></tr></table></figure>
+<p>数据源支持：支持MySQL数据源</p>
+<h3 id="3-2-重新编译安装coreseek，以支持mysql数据源和xml数据源"><a href="#3-2-重新编译安装coreseek，以支持mysql数据源和xml数据源" class="headerlink" title="3.2  重新编译安装coreseek，以支持mysql数据源和xml数据源"></a>3.2  重新编译安装coreseek，以支持mysql数据源和xml数据源</h3><h4 id="只要锄头舞的好，那有墙角挖不倒？"><a href="#只要锄头舞的好，那有墙角挖不倒？" class="headerlink" title="只要锄头舞的好，那有墙角挖不倒？"></a>只要锄头舞的好，那有墙角挖不倒？</h4><pre><code>cd csft-3.2.14
+
+make clean
+
+./configure --prefix=/usr/local/coreseek  --without-unixodbc --with-mmseg --with-mmseg-includes=/usr/local/mmseg3/include/mmseg/ --with-mmseg-libs=/usr/local/mmseg3/lib/ --with-mysql
+
+以上configure参数请正确拷贝，不要遗漏或者随意修改
+
+make &amp;&amp; make install
+</code></pre><h3 id="3-3-coreseek中文全文检索测试"><a href="#3-3-coreseek中文全文检索测试" class="headerlink" title="3.3  coreseek中文全文检索测试"></a>3.3  coreseek中文全文检索测试</h3><h4 id="没有医保和寿险的，天黑后不要见义勇为。"><a href="#没有医保和寿险的，天黑后不要见义勇为。" class="headerlink" title="没有医保和寿险的，天黑后不要见义勇为。"></a>没有医保和寿险的，天黑后不要见义勇为。</h4><pre><code> cd testpack    
+
+/usr/local/coreseek/bin/indexer -c etc/csft.conf
+</code></pre><p>以下为正常情况下的提示信息：</p>
+<pre><code> Coreseek Fulltext 3.2 [ Sphinx 0.9.9-release (r2117)]
+Copyright (c) 2007-2010,
+Beijing Choice Software Technologies Inc (http://www.coreseek.com)
+
+ using config file &apos;etc/csft.conf&apos;...
+total 0 reads, 0.000 sec, 0.0 kb/call avg, 0.0 msec/call avg
+total 0 writes, 0.000 sec, 0.0 kb/call avg, 0.0 msec/call avg
+</code></pre><p>csft-4.0版显示：ERROR: nothing to do.<br>提示：FATAL: failed to lock var/data/xml.spl: Resource temporarily unavailable, will not index. Try –rotate option.</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="regexp">/usr/</span>local<span class="regexp">/coreseek/</span>bin<span class="regexp">/indexer -c etc/</span>csft.conf --rotate</div></pre></td></tr></table></figure>
+<pre><code>/usr/local/coreseek/bin/indexer -c etc/csft.conf --all
+</code></pre><p>以下为正常索引全部数据时的提示信息：（csft-4.0版类似）</p>
+<pre><code>Coreseek Fulltext 3.2 [ Sphinx 0.9.9-release (r2117)]
+
+opyright (c) 2007-2010,
+
+Beijing Choice Software Technologies Inc (http://www.coreseek.com)
+
+ using config file &apos;etc/csft.conf&apos;...
+indexing index &apos;xml&apos;...
+collected 3 docs, 0.0 MB
+sorted 0.0 Mhits, 100.0% done
+total 3 docs, 7585 bytes
+total 0.075 sec, 101043 bytes/sec, 39.96 docs/sec
+total 2 reads, 0.000 sec, 5.6 kb/call avg, 0.0 msec/call avg
+total 7 writes, 0.000 sec, 3.9 kb/call avg, 0.0 msec/call avg 
+</code></pre><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="regexp">/usr/</span>local<span class="regexp">/coreseek/</span>bin<span class="regexp">/indexer -c etc/</span>csft.conf xml</div></pre></td></tr></table></figure>
+<p>以下为正常索引指定数据时的提示信息：（csft-4.0版类似）</p>
+<pre><code>    Coreseek Fulltext 3.2 [ Sphinx 0.9.9-release (r2117)]
+Copyright (c) 2007-2010,
+Beijing Choice Software Technologies Inc (http://www.coreseek.com)
+
+ using config file &apos;etc/csft.conf&apos;...
+indexing index &apos;xml&apos;...
+collected 3 docs, 0.0 MB
+sorted 0.0 Mhits, 100.0% done
+total 3 docs, 7585 bytes
+total 0.069 sec, 109614 bytes/sec, 43.35 docs/sec
+total 2 reads, 0.000 sec, 5.6 kb/call avg, 0.0 msec/call avg
+total 7 writes, 0.000 sec, 3.9 kb/call avg, 0.0 msec/call avg
+</code></pre><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="regexp">/usr/</span>local<span class="regexp">/coreseek/</span>bin<span class="regexp">/search -c etc/</span>csft.conf</div></pre></td></tr></table></figure>
+<p>以下为正常测试搜索时的提示信息：（csft-4.0版类似）</p>
+<pre><code>    Coreseek Fulltext 3.2 [ Sphinx 0.9.9-release (r2117)]
+Copyright (c) 2007-2010,
+Beijing Choice Software Technologies Inc (http://www.coreseek.com)
+
+ using config file &apos;etc/csft.conf&apos;...
+index &apos;xml&apos;: query &apos;&apos;: returned 3 matches of 3 total in 0.093 sec
+
+displaying matches:
+1. document=1, weight=1, published=Thu Apr  1 22:20:07 2010, author_id=1
+2. document=2, weight=1, published=Thu Apr  1 23:25:48 2010, author_id=1
+3. document=3, weight=1, published=Thu Apr  1 12:01:00 2010, author_id=2
+
+words:
+</code></pre><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/local/coreseek/bin/search -c etc/csft<span class="selector-class">.conf</span> -<span class="selector-tag">a</span> Twittter和Opera都提供了搜索服务</div></pre></td></tr></table></figure>
+<p>以下为正常测试搜索关键词时的提示信息：（csft-4.0版类似）</p>
+<pre><code>    Coreseek Fulltext 3.2 [ Sphinx 0.9.9-release (r2117)]
+Copyright (c) 2007-2010,
+Beijing Choice Software Technologies Inc (http://www.coreseek.com)
+
+ using config file &apos;etc/csft.conf&apos;...
+index &apos;xml&apos;: query &apos;Twittter和Opera都提供了搜索服务 &apos;: returned 3 matches of 3 total in 0.038 sec
+
+displaying matches:
+1. document=3, weight=24, published=Thu Apr  1 12:01:00 2010, author_id=2
+2. document=1, weight=4, published=Thu Apr  1 22:20:07 2010, author_id=1
+3. document=2, weight=3, published=Thu Apr  1 23:25:48 2010, author_id=1
+
+words:
+1. &apos;twittter&apos;: 1 documents, 3 hits
+2. &apos;和&apos;: 3 documents, 15 hits
+3. &apos;opera&apos;: 1 documents, 25 hits
+4. &apos;都&apos;: 2 documents, 4 hits
+5. &apos;提供&apos;: 0 documents, 0 hits
+6. &apos;了&apos;: 3 documents, 18 hits
+7. &apos;搜索&apos;: 2 documents, 5 hits
+8. &apos;服务&apos;: 1 documents, 1 hits
+</code></pre><p>参考文档：<a href="http://www.coreseek.cn/products-install/install_on_bsd_linux/" target="_blank" rel="external">http://www.coreseek.cn/products-install/install_on_bsd_linux/</a></p>
+<h3 id="4-1-配置文件"><a href="#4-1-配置文件" class="headerlink" title="4.1  配置文件"></a>4.1  配置文件</h3><h4 id="你只有非常努力，才能看起来毫不费力-1"><a href="#你只有非常努力，才能看起来毫不费力-1" class="headerlink" title="你只有非常努力，才能看起来毫不费力"></a>你只有非常努力，才能看起来毫不费力</h4><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="regexp">/usr/</span>local<span class="regexp">/coreseek/</span>bin<span class="regexp">/searchd -c etc/</span>csft.conf</div></pre></td></tr></table></figure>
+<p>以下为正常开启搜索服务时的提示信息：（csft-4.0版类似）</p>
+<pre><code>    Coreseek Fulltext 3.2 [ Sphinx 0.9.9-release (r2117)]
+Copyright (c) 2007-2010,
+Beijing Choice Software Technologies Inc (http://www.coreseek.com)
+
+using config file &apos;etc/csft.conf&apos;...
+listening on all interfaces, port=9312
+</code></pre><p>如要停止搜索服务，请使用</p>
+<pre><code>/usr/local/coreseek/bin/searchd -c etc/csft.conf --stop
+</code></pre><p>如要已启动服务，要更新索引，请使用</p>
+<pre><code>/usr/local/coreseek/bin/indexer -c etc/csft.conf --all --rotate
+</code></pre><h5 id="ERROR-index-‘xml’-failed-to-configure-some-of-the-sources-will-not-index-错误"><a href="#ERROR-index-‘xml’-failed-to-configure-some-of-the-sources-will-not-index-错误" class="headerlink" title="ERROR: index ‘xml’: failed to configure some of the sources, will not index.错误"></a>ERROR: index ‘xml’: failed to configure some of the sources, will not index.错误</h5><pre><code>yum install expat-devel
+</code></pre><p>然后再重新编译coreseek，但执行make前记得先make clean下清除掉原先没有该依赖时编译生成的内容。     </p>
+<h2 id="sphinx安装常见错误"><a href="#sphinx安装常见错误" class="headerlink" title="sphinx安装常见错误"></a>sphinx安装常见错误</h2><h4 id="不是每一次努力都会有收获，但是每一次收获都必须努力。"><a href="#不是每一次努力都会有收获，但是每一次收获都必须努力。" class="headerlink" title="不是每一次努力都会有收获，但是每一次收获都必须努力。"></a>不是每一次努力都会有收获，但是每一次收获都必须努力。</h4><p>链接地址：<a href="http://blog.sina.com.cn/s/blog_998c49430101adv6.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_998c49430101adv6.html</a></p>
+<h3 id="Linux操作系统下：mysql数据源配置：（对应coreseek-4-1-testpack-etc-csft-mysql-conf）"><a href="#Linux操作系统下：mysql数据源配置：（对应coreseek-4-1-testpack-etc-csft-mysql-conf）" class="headerlink" title="Linux操作系统下：mysql数据源配置：（对应coreseek-4.1/testpack/etc/csft_mysql.conf）"></a>Linux操作系统下：mysql数据源配置：（对应coreseek-4.1/testpack/etc/csft_mysql.conf）</h3><h4 id="要在江湖混，最好是光棍！"><a href="#要在江湖混，最好是光棍！" class="headerlink" title="要在江湖混，最好是光棍！"></a>要在江湖混，最好是光棍！</h4><p>链接地址：<a href="http://www.coreseek.cn/products-install/mysql/" target="_blank" rel="external">http://www.coreseek.cn/products-install/mysql/</a></p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#源定义</span></div><div class="line">source mysql</div><div class="line">&#123;</div><div class="line">    <span class="attr">type</span>                = mysql</div><div class="line"></div><div class="line">    <span class="attr">sql_host</span>                = localhost</div><div class="line">    <span class="attr">sql_user</span>                = root</div><div class="line">    <span class="attr">sql_pass</span>                =</div><div class="line">    <span class="attr">sql_db</span>                = test</div><div class="line">    <span class="attr">sql_port</span>                = <span class="number">3306</span></div><div class="line">    <span class="attr">sql_query_pre</span>            = SET NAMES utf8</div><div class="line"></div><div class="line">    <span class="attr">sql_query</span>                = SELECT id, group_id, UNIX_TIMESTAMP(date_added) AS date_added, title, content FROM documents</div><div class="line">                                            <span class="comment">#sql_query第一列id需为整数</span></div><div class="line">                                            <span class="comment">#title、content作为字符串/文本字段，被全文索引</span></div><div class="line">    <span class="attr">sql_attr_uint</span>            = group_id            <span class="comment">#从SQL读取到的值必须为整数</span></div><div class="line">    <span class="attr">sql_attr_timestamp</span>        = date_added      <span class="comment">#从SQL读取到的值必须为整数，作为时间属性</span></div><div class="line"></div><div class="line">    <span class="attr">sql_query_info_pre</span>      = SET NAMES utf8                                        <span class="comment">#命令行查询时，设置正确的字符集，3.2.14开始支持</span></div><div class="line">    <span class="attr">sql_query_info</span>            = SELECT * FROM documents WHERE <span class="attr">id=$id</span>  <span class="comment">#命令行查询时，从数据库读取原始数据信息</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">#index定义</span></div><div class="line">index mysql</div><div class="line">&#123;</div><div class="line">    <span class="attr">source</span>            = mysql             <span class="comment">#对应的source名称</span></div><div class="line">    <span class="attr">path</span>            = var/data/mysql</div><div class="line">    <span class="attr">docinfo</span>            = extern</div><div class="line">    <span class="attr">mlock</span>            = <span class="number">0</span></div><div class="line">    <span class="attr">morphology</span>        = none</div><div class="line">    <span class="attr">min_word_len</span>        = <span class="number">1</span></div><div class="line">    <span class="attr">html_strip</span>                = <span class="number">0</span></div><div class="line">    <span class="attr">charset_dictpath</span> = /usr/local/mmseg3/etc/    <span class="comment">#BSD、Linux环境下设置，/符号结尾</span></div><div class="line">    <span class="comment">#charset_dictpath = etc/                        #Windows环境下设置，/符号结尾</span></div><div class="line">    <span class="attr">charset_type</span>        = zh_cn.utf-<span class="number">8</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="4-2-在csft-mysql-conf增加增量索引配置"><a href="#4-2-在csft-mysql-conf增加增量索引配置" class="headerlink" title="4.2 在csft_mysql.conf增加增量索引配置"></a>4.2 在csft_mysql.conf增加增量索引配置</h3><figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#增加以下配置</div><div class="line">source delta : mysql #此写法为delta继承mysql源中的所有配置，如果子配置中有相同配置，则覆盖父配置</div><div class="line">&#123;</div><div class="line">        sql_query       =       <span class="keyword">SELECT</span> id,fromid,toid,content <span class="keyword">FROM</span> say <span class="keyword">WHERE</span> id &gt; (<span class="keyword">SELECT</span> max_offset <span class="keyword">FROM</span> sph_say_counter <span class="keyword">WHERE</span> id = <span class="number">1</span>) #从记录大于max_offset后的数据开始索引</div><div class="line">        sql_query_post  =       <span class="built_in">REPLACE</span> <span class="keyword">INTO</span> sph_say_counter(id,max_offset) <span class="keyword">SELECT</span> <span class="number">1</span>,<span class="built_in">MAX</span>(id) <span class="keyword">FROM</span> say #索引后更新最大记录,sql_query_pre是执行查询前执行的语句，sql_query_post是执行查询后再执行的语句</div><div class="line">&#125;</div><div class="line"><span class="keyword">index</span> delta : mysql</div><div class="line">&#123;</div><div class="line">        source          =       delta</div><div class="line">        <span class="keyword">path</span>            =       /usr/local/coreseek/var/data/delta</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="5-1-建立索引"><a href="#5-1-建立索引" class="headerlink" title="5.1 建立索引"></a>5.1 建立索引</h1><h3 id="调用命令列表："><a href="#调用命令列表：" class="headerlink" title="调用命令列表："></a>调用命令列表：</h3><p> 启动后台服务（必须开启）</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="regexp">/usr/</span>local<span class="regexp">/coreseek/</span>bin<span class="regexp">/searchd -c /u</span>sr<span class="regexp">/local/</span>coreseek<span class="regexp">/etc/</span>csft_mysql.conf</div></pre></td></tr></table></figure>
+<p> 执行索引（查询、测试前必须执行一次）<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="regexp">/usr/</span>local<span class="regexp">/coreseek/</span>bin<span class="regexp">/indexer -c /u</span>sr<span class="regexp">/local/</span>coreseek<span class="regexp">/etc/</span>csft_mysql.conf --all --rotate</div></pre></td></tr></table></figure></p>
+<p>执行增量索引</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="regexp">/usr/</span>local<span class="regexp">/coreseek/</span>bin<span class="regexp">/indexer -c /u</span>sr<span class="regexp">/local/</span>coreseek<span class="regexp">/etc/</span>csft_mysql.conf delta --rotate</div></pre></td></tr></table></figure>
+<p>合并索引</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/usr/<span class="keyword">local</span>/coreseek/bin/indexer -c /usr/<span class="keyword">local</span>/coreseek/etc/csft_mysql.<span class="keyword">conf</span> --<span class="keyword">merge</span> main delta --<span class="keyword">rotate</span> --<span class="keyword">merge</span>-dst-<span class="keyword">range</span> deleted 0 0</div></pre></td></tr></table></figure>
+<p>（为了防止多个关键字指向同一个文档加上–merge-dst-range deleted 0 0）</p>
+<p>后台服务测试</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="regexp">/usr/</span>local<span class="regexp">/coreseek/</span>bin<span class="regexp">/search -c /u</span>sr<span class="regexp">/local/</span>coreseek<span class="regexp">/etc/</span>csft_mysql.conf  aaa</div></pre></td></tr></table></figure>
+<p>关闭后台服务</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="regexp">/usr/</span>local<span class="regexp">/coreseek/</span>bin<span class="regexp">/searchd -c /u</span>sr<span class="regexp">/local/</span>coreseek<span class="regexp">/etc/</span>csft_mysql.conf --stop</div></pre></td></tr></table></figure>
+<p>自动化命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">crontab <span class="_">-e</span></div></pre></td></tr></table></figure>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">*<span class="regexp">/1 * * * * /</span>bin<span class="regexp">/sh /</span>usr<span class="regexp">/local/</span>coreseek<span class="regexp">/bin/</span>indexer -c <span class="regexp">/usr/</span>local<span class="regexp">/coreseek/</span>etc/csft_mysql.conf delta --rotate    </div><div class="line">*<span class="regexp">/5 * * * * /</span>bin<span class="regexp">/sh /</span>usr<span class="regexp">/local/</span>coreseek<span class="regexp">/bin/</span>indexer -c <span class="regexp">/usr/</span>local<span class="regexp">/coreseek/</span>etc/csft_mysql.conf --merge main delta --rotate --merge-dst-range deleted <span class="number">0</span> <span class="number">0</span>    </div><div class="line"><span class="number">30</span> <span class="number">1</span> * * *  <span class="regexp">/bin/</span>sh <span class="regexp">/usr/</span>local<span class="regexp">/coreseek/</span>bin<span class="regexp">/indexer -c /</span>usr<span class="regexp">/local/</span>coreseek<span class="regexp">/etc/</span>csft_mysql.conf --all --rotate</div></pre></td></tr></table></figure>
+<p>以下任务计划的意思是：每隔一分钟执行一遍增量索引，每五分钟执行一遍合并索引，每天1:30执行整体索引。</p>
+<h2 id="6-1-Sphinx扩展安装安装"><a href="#6-1-Sphinx扩展安装安装" class="headerlink" title="6.1 Sphinx扩展安装安装"></a>6.1 Sphinx扩展安装安装</h2><p>参考文献：<a href="http://blog.csdn.net/moqiang02/article/details/42027243" target="_blank" rel="external">http://blog.csdn.net/moqiang02/article/details/42027243</a></p>
+<p>Coreseek官方教程中建议php使用直接include一个php文件进行操作，事实上php有独立的sphinx模块可以直接操作coreseek(coreseek就是sphinx！)已经进入了php的官方函数库，而且效率的提升不是一点点！但php模块依赖于libsphinxclient包。</p>
+<h3 id="第一步-安装依赖libsphinxclient"><a href="#第一步-安装依赖libsphinxclient" class="headerlink" title="[第一步] 安装依赖libsphinxclient"></a>[第一步] 安装依赖libsphinxclient</h3><figure class="highlight vala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="meta"># cd /var/install/coreseek-4.1-beta/csft-4.1/api/libsphinxclient/    </span></div><div class="line"><span class="meta"># ./configure  --prefix=/usr/local/sphinxclient    </span></div><div class="line">    </div><div class="line">configure: creating ./config.status    </div><div class="line">config.status: creating Makefile    </div><div class="line">config.status: error: cannot find input file: Makefile.in   #报错configure失败        </div><div class="line">    </div><div class="line"><span class="comment">//处理configure报错    </span></div><div class="line">编译过程中报了一个config.status: error: cannot find input file: src/Makefile.in这个的错误，然后运行下列指令再次编译就能通过了：    </div><div class="line"><span class="meta"># aclocal    </span></div><div class="line"><span class="meta"># libtoolize --force    </span></div><div class="line"><span class="meta"># automake --add-missing    </span></div><div class="line"><span class="meta"># autoconf    </span></div><div class="line"><span class="meta"># autoheader    </span></div><div class="line"><span class="meta"># make clean    </span></div><div class="line">    </div><div class="line"><span class="comment">//从新configure编译    </span></div><div class="line"><span class="meta"># ./configure    </span></div><div class="line">    </div><div class="line"><span class="meta"># make &amp;&amp; make install</span></div></pre></td></tr></table></figure>
+<h3 id="第二步-安装sphinx的PHP扩展"><a href="#第二步-安装sphinx的PHP扩展" class="headerlink" title="[第二步] 安装sphinx的PHP扩展"></a>[第二步] 安装sphinx的PHP扩展</h3><figure class="highlight vala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">http:<span class="comment">//pecl.php.net/package/sphinx    </span></div><div class="line"><span class="meta"># wget http://pecl.php.net/get/sphinx-1.3.0.tgz    </span></div><div class="line"><span class="meta"># tar zxvf sphinx-1.3.0.tgz    </span></div><div class="line"><span class="meta"># cd sphinx-1.3.0    </span></div><div class="line"><span class="meta"># phpize    </span></div><div class="line"><span class="meta"># ./configure --with-php-config=/usr/bin/php-config --with-sphinx=/usr/local/sphinxclient    </span></div><div class="line"><span class="meta"># make &amp;&amp; make install    </span></div><div class="line"><span class="meta"># cd /etc/php.d/    </span></div><div class="line"><span class="meta"># cp gd.ini  sphinx.ini    </span></div><div class="line"><span class="meta"># vi sphinx.ini    </span></div><div class="line">    </div><div class="line">extension=sphinx.so    </div><div class="line">    </div><div class="line"><span class="meta"># service php-fpm restart</span></div></pre></td></tr></table></figure>
+<p>打开phpinfo看一下是否已经支持了sphinx模块。</p>
+<h2 id="7-1-php调用sphinx示例："><a href="#7-1-php调用sphinx示例：" class="headerlink" title="7.1 php调用sphinx示例："></a>7.1 php调用sphinx示例：</h2><p>调用示例一：简单测试</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?php</span>    </span></div><div class="line">    $s = <span class="keyword">new</span> SphinxClient;    </div><div class="line">    $s-&gt;setServer(<span class="string">"127.0.0.1"</span>, <span class="number">9312</span>);    </div><div class="line">    </div><div class="line">    $s-&gt;setMatchMode(SPH_MATCH_PHRASE);    </div><div class="line">    $s-&gt;setMaxQueryTime(<span class="number">30</span>);    </div><div class="line">    $res = $s-&gt;query(<span class="string">"宝马"</span>,<span class="string">'main'</span>); <span class="comment">#[宝马]关键字，[main]数据源source    </span></div><div class="line">    $err = $s-&gt;GetLastError();    </div><div class="line">    var_dump(array_keys($res[<span class="string">'matches'</span>]));    </div><div class="line">    <span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>.<span class="string">"通过获取的ID来读取数据库中的值即可。"</span>.<span class="string">"&lt;br&gt;"</span>;    </div><div class="line">        </div><div class="line">    <span class="keyword">echo</span> <span class="string">'&lt;pre&gt;'</span>;    </div><div class="line">    var_dump($res);    </div><div class="line">    var_dump($err);    </div><div class="line">    <span class="keyword">echo</span> <span class="string">'&lt;/pre&gt;'</span>;</div></pre></td></tr></table></figure>
+<h3 id="调用示例二：支持分页"><a href="#调用示例二：支持分页" class="headerlink" title="调用示例二：支持分页"></a>调用示例二：支持分页</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?php</span>    </span></div><div class="line">    header(<span class="string">"Content-type: text/html; charset=utf-8"</span>);    </div><div class="line">    <span class="keyword">require</span>(<span class="string">"./sphinxapi.php"</span>);    </div><div class="line">    $s = <span class="keyword">new</span> SphinxClient;    </div><div class="line">    $s-&gt;setServer(<span class="string">"192.168.252.132"</span>, <span class="number">9312</span>);    </div><div class="line">        </div><div class="line">    <span class="comment">//SPH_MATCH_ALL, 匹配所有查询词(默认模式); SPH_MATCH_ANY, 匹配查询词中的任意一个; SPH_MATCH_EXTENDED2, 支持特殊运算符查询    </span></div><div class="line">    $s-&gt;setMatchMode(SPH_MATCH_ALL);    </div><div class="line">    $s-&gt;setMaxQueryTime(<span class="number">30</span>);                             <span class="comment">//设置最大搜索时间    </span></div><div class="line">    $s-&gt;SetArrayResult(<span class="keyword">false</span>);                           <span class="comment">//是否将Matches的key用ID代替    </span></div><div class="line">    $s-&gt;SetSelect ( <span class="string">"*"</span> );                               <span class="comment">//设置返回信息的内容,等同于SQL    </span></div><div class="line">    $s-&gt;SetRankingMode(SPH_RANK_BM25);                   <span class="comment">//设置评分模式，SPH_RANK_BM25可能使包含多个词的查询的结果质量下降。     </span></div><div class="line">    <span class="comment">//$s-&gt;SetSortMode(SPH_SORT_EXTENDED);                //发现增加此参数会使结果不准确    </span></div><div class="line">    <span class="comment">//$s-&gt;SetSortMode(SPH_SORT_EXTENDED,"from_id asc,id desc");  //设置匹配项的排序模式, SPH_SORT_EXTENDED按一种类似SQL的方式将列组合起来，升序或降序排列。    </span></div><div class="line">    $weights = <span class="keyword">array</span> (<span class="string">'company_name'</span> =&gt; <span class="number">20</span>);    </div><div class="line">    $s-&gt;SetFieldWeights($weights);                        <span class="comment">//设置字段权重    </span></div><div class="line">    $s-&gt;SetLimits ( <span class="number">0</span>, <span class="number">30</span>, <span class="number">1000</span>, <span class="number">0</span> );      <span class="comment">//设置结果集偏移量  SetLimits (便宜量,匹配项数目,查询的结果集数默认1000,阀值达到后停止)    </span></div><div class="line">    <span class="comment">//$s-&gt;SetFilter ( $attribute, $values, $exclude=false );     //设置属性过滤    </span></div><div class="line">    <span class="comment">//$s-&gt;SetGroupBy ( $attribute, $func, $groupsort="@group desc" );    //设置分组的属性    </span></div><div class="line">    $res = $s-&gt;query(<span class="string">'@* "汽车"'</span>,<span class="string">'main'</span>,<span class="string">'--single-0-query--'</span>); <span class="comment">#[宝马]关键字，[news]数据源source    </span></div><div class="line">        </div><div class="line">        </div><div class="line">    <span class="comment">//代码高亮    </span></div><div class="line">    $tags = <span class="keyword">array</span>();    </div><div class="line">    $tags_name = <span class="keyword">array</span>();    </div><div class="line">    <span class="keyword">foreach</span>($res[<span class="string">'matches'</span>] <span class="keyword">as</span> $key=&gt;$value)&#123;    </div><div class="line">        $tags[] = $value[<span class="string">'attrs'</span>];    </div><div class="line">        $company_name[] = $value[<span class="string">'attrs'</span>][<span class="string">'company_name'</span>];    </div><div class="line">        $description[] = $value[<span class="string">'attrs'</span>][<span class="string">'description'</span>];    </div><div class="line">    &#125;    </div><div class="line">    $company_name = $s-&gt;BuildExcerpts ($company_name, <span class="string">'main'</span>, <span class="string">'汽车'</span>, $opts=<span class="keyword">array</span>() );     <span class="comment">//执行高亮，这里索引名字千万不能用*    </span></div><div class="line">    $description = $s-&gt;BuildExcerpts ($description, <span class="string">'main'</span>, <span class="string">'汽车'</span>, $opts=<span class="keyword">array</span>() );       <span class="comment">//执行高亮，这里索引名字千万不能用*    </span></div><div class="line">    <span class="keyword">foreach</span>($tags <span class="keyword">as</span> $k=&gt;$v)    </div><div class="line">    &#123;    </div><div class="line">        $tags[$k][<span class="string">'company_name'</span>] = $company_name[$k];  <span class="comment">//高亮后覆盖    </span></div><div class="line">        $tags[$k][<span class="string">'description'</span>] = $description[$k];    <span class="comment">//高亮后覆盖    </span></div><div class="line">    &#125;    </div><div class="line">        </div><div class="line">    <span class="comment">// 高亮后覆盖    </span></div><div class="line">    $i = <span class="number">0</span>;    </div><div class="line">    <span class="keyword">foreach</span>($res[<span class="string">'matches'</span>] <span class="keyword">as</span> $key=&gt;$value)&#123;    </div><div class="line">        $res[<span class="string">'matches'</span>][$key] = $tags[$i];    </div><div class="line">        $i++;    </div><div class="line">    &#125;    </div><div class="line">        </div><div class="line">    $err = $s-&gt;GetLastError();    </div><div class="line">        </div><div class="line">    <span class="keyword">echo</span> <span class="string">'&lt;pre&gt;'</span>;    </div><div class="line">    var_export($res);    </div><div class="line">    var_export($err);    </div><div class="line">    <span class="keyword">echo</span> <span class="string">'&lt;/pre&gt;'</span>;</div></pre></td></tr></table></figure>
+<hr>
+<p>错误：FATAL: failedto lock pid file ‘/home/zhangjie_z.pt/local/sphinx/var/log/searchd.pid’:Resource temporarily unavailable (searchd already running?)<br>意思就是你已经打开了一个search进程，你需要找到相关进程号ps -e|grep searchd，然后kill PID杀死之前的进程，再启动新进程）</p>
+<p>启动 searchd 服务时提示如下错误：<br>index ‘test1’: search error: failed to open /var/lib/sphinx/test1.sph: sphinx 错误解决 index ‘test1’: search error: failed to open /var/lib/sphinx/test.sph:No such file or directory; NOT SERVING<br>这个错误可能是没有建立好索引导致的，所以 indexer –all 很重要 </p>
+
+	</div>
+	<div class="meta split">
+		
+			<span>本文总阅读量 <span id="busuanzi_value_page_pv"></span> 次</span>
+		
+		<time class="post-date" datetime="2017-04-19T16:33:31.780Z" itemprop="datePublished">2017-04-20</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="中文分词" data-title="Hello World" data-url="http://yoursite.com/2017/04/20/中文分词/"></div>
+<script type="text/javascript">
+
+var duoshuoQuery = {short_name:"yumemor"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+  
+</div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
+
+
+
+
+
+<div class="fat-footer">
+	<div class="wrapper">
+		<div class="layout layout--center">
+			<div class="layout__item palm-mb">
+				<div class="media">
+					<img class="headimg" src='http://om733u7yz.bkt.clouddn.com/12.jpg' alt='Kun'>
+					<div class="media__body">
+						<h4>k-blog</h4>
+						<p class='site-description'>null</p>
+					</div>
+				</div>
+				<div class="author-contact">
+					<ul>
+						
+							
+							<li>
+				        		<a href="http://weibo.com/5497648979/" target="_blank">
+				        			
+				        				<i class="iconfont icon-weibo"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://user.qzone.qq.com/1666845868/" target="_blank">
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://www.zhihu.com/people/yumemor" target="_blank">
+				        			
+										<i class="iconfont icon-zhihu"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer" role="contentinfo">
+	<div class="wrapper wrapper--wide split split--responsive">
+		
+			<span>本站总访问量 <span id="busuanzi_value_site_pv"></span> 次, 访客数 <span id="busuanzi_value_site_uv"></span> 人次</span>
+		
+		<span>Theme by <a href="http://github.com/kunphp">Kun</a>. Powered by <a href="http://hexo.io">Hexo</a></span>
+	</div>
+</footer>
+
+	<!-－这里导入了 lib.js 里面涵盖了 jQuery 等框架 所以注释掉-->
+	<!--<script src="http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js"></script>-->
+	<script src="/js/lib.js"></script>
+	<script src="/js/google-code-prettify/prettify.js"></script>
+	<script src="/js/module.js"></script>
+	<script src="/js/script.js"></script>
+	
+		<script async src="http://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+	<script type='text/javascript'>
+		//代码高亮
+		$(document).ready(function(){
+	 		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   			prettyPrint();
+		});
+	</script>
+	</body>
+</html>
